@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>  
+       
+        <title>電卓</title>
+      </head>
+ 
+      <body>
+          
+
+        
+      
+         <input type="text" id="result" >
+   
+        <div>
+    <input type="button" value="1" onclick="edit(1)">
+    <input type="button" value="2" onclick="edit(2)">
+    <input type="button" value="3" onclick="edit(3)">
+    <input type="button" value="+" onclick="edit('+')">
+  </div>
+  <div>
+    <input type="button" value="4" onclick="edit('4')">
+    <input type="button" value="5" onclick="edit(5)">
+    <input type="button" value="6" onclick="edit(6)">
+    <input type="button" value="-" onclick="edit('-')">
+  </div>
+  <div>
+    <input type="button" value="7" onclick="edit(7)">
+    <input type="button" value="8" onclick="edit(8)">
+    <input type="button" value="9" onclick="edit(9)">
+    <input type="button" value="/" onclick="edit('/')">
+    <input type="button" value="C" onclick="clearone()">
+  </div>
+  <div>
+    <input type="button" value="0" onclick="edit(0)">
+    <input type="button" value="." onclick="edit('.')">
+    <input type="button" value="*" onclick="edit('*')">
+    <input type="button" value="=" onclick="calc()">
+    <input type="button" value="AC" onclick="clearall()">
+  </div>
+      
+   <script language="javascript" type="text/javascript">
+  var EnterFlag=false;
+  function edit(n){
+      var obj=document.getElementById("result");
+      obj.value +=n;
+      
+  }
+  
+      function calc(){
+          var obj =document.getElementById("result");
+          obj.value=eval(obj.value);
+          EnterFlag=true;
+      }
+   
+   function clearall(){
+       var obj =document.getElementById("result");
+       obj.value="";
+   }
+
+
+function clearone(){
+    var obj =document.getElementById("result");
+    obj.slice(0,-1);
+    
+} //1文字戻るのCボタンが実装できません。課題に出されている部分ではないですがよければご意見いただきたいです。
+
+
+
+
+  </script>
+</body>
+</html>
